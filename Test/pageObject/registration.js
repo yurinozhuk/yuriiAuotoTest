@@ -1,8 +1,11 @@
-import page from "./page";
+const Page = require('./page');
 
-class registrationPage extends page{
+class RegistrationPage extends Page{
+
+    get inputUsername () { return $('input[name="f1"]') }
+
     fillingRegistationForm(){
-        $('input[name="f1"]').setValue('YuriiTest');
+        this.inputUsername.setValue('YuriiTest');
         $('input[name="f2_1"]').setValue('38_GtfEC5Bt6tAa');
         $('input[name="f2_2"]').setValue('38_GtfEC5Bt6tAa');
         $('input[name="f4"]').setValue('yuriisdb1@gmail.com');
@@ -14,3 +17,4 @@ close(){
     super.close
 }
 }
+module.exports = new RegistrationPage();
